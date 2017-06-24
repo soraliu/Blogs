@@ -3,10 +3,12 @@
 ### 3列布局
 1. [两端固定，中间自适应](code/css/layout-mid-response.html);
 2. [两端自适应，中间固定](code/css/layout-mid-fixed.html);
-3. position基本属性：
+
+### position
+1. position基本属性：
     * static
     * relative
     * absolute
     * fixed
     * inherit
-4. [absolute内嵌absolute中，内部布局初始定位点是相对于最近absolute布局父元素](code/css/position-absolute.html);
+2. [absolute内嵌absolute中，内部布局初始定位点是相对于最近absolute布局父元素](code/css/position-absolute.html);
