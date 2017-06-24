@@ -1,57 +1,62 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CSS</title>
-<style type="text/css">
-body{padding:0;margin:0;}
-div{
-    height:100%;
-}
-#mid {
-    z-index:2;
-    background-color:#eee;
-    width:500px;
-    margin-left:-250px;
-    position:absolute;
-    top:0;
-    left:50%;    
-}
-#left,#right {
-    z-index:1;
-    position:absolute;
-    top:0;
-    width:50%;
-}
-#left {
-    left:0;
-}
-#left .container {
-    margin-right:250px;
-    background-color:#bbb;
-}
-#right {
-    right:0;     
-}
-#right .container {
-    margin-left:250px;
-    background-color:#bbb;
-}
-</style>
+    <title>layout mid fixed</title>
+    <style>
+        div {
+            height: 300px;
+        }
+
+        .mid {
+            z-index: 2;
+            top: 0;
+            background-color: red;
+            width: 500px;
+            margin-left: -250px;
+            left: 50%;
+            position: absolute;
+        }
+
+        .left, .right {
+            z-index: 1;
+            top: 0;
+            position: absolute;
+            width: 50%;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            right: 0;
+        }
+
+        .left .container {
+            margin-right: 250px;
+            background-color: blue;
+        }
+
+
+        .right .container {
+            margin-left: 250px;
+            background-color: green;
+        }
+    </style>
 </head>
+
 <body>
-<div id="mid">
-    mid 宽度固定 : 500px
-</div>
-<div id="left">
-    <div class="container">
-        left 宽度自适应
+    <div class="mid">
     </div>
-</div>
-<div id="right">
-    <div class="container">
-        right 宽度自适应
+    <div class="left">
+        <div class="container">
+        </div>
     </div>
-</div>
+    <div class="right">
+        <div class="container">
+        </div>
+    </div>
 </body>
+
 </html>

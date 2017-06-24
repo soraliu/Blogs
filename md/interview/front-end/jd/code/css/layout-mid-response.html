@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>layout mid response</title>
+    <style>
+        .top {
+            height: 100px;
+            background-color: red;
+        }
+        .left {
+            width:100px;
+            height:400px;
+            background-color: green;
+            float: left;
+        }
+        .right {
+            width:100px;
+            height:400px;
+            background-color: blue;
+            float:right;
+        }
+        .mid {
+            height:400px;
+            background-color: grey;
+        }
+    </style>
 </head>
 <body>
-<div style="height:100px;background-color: red"></div>
-<div style="height:300px;">
-    <div style="width:100px;height:400px;background-color: green;float: left"></div>
-    <div style="width:100px;height:400px;background-color: blue;float:right"></div>
-    <div style="height:400px;background-color: grey;"></div>
+<div class="top"></div>
+<div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="mid"></div>
 </div>
-
 </body>
 </html>
