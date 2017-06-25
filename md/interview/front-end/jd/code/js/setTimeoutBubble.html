@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setTimeout Bubble</title>
+    <style>
+        #child {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child"></div>
+    </div>
+    <script>
+        document.getElementById('parent').onclick = function() {
+            console.log('parent');
+        };
+
+        document.getElementById('child').onclick = function() {
+            console.log('child');
+            document.getElementById('child').onclick = function() {
+                setTimeout(function() {
+                    console.log('child setTimeout');
+                }, 0);
+            };
+        };
+    </script>
+</body>
+</html>

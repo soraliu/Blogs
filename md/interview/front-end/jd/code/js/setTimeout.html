@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setTimeout(func, 0)</title>
+    <script>
+        var f1 = function() {
+            console.log('f1->');
+        }
+        var f2 = function() {
+            console.log('f2->');
+        }
+        var f3 = function() {
+            console.log('f3->');
+        }
+
+        f1();
+        setTimeout(f2, 0);
+        f3();
+
+
+        setTimeout(function() {
+            document.getElementById('app').innerHTML = 'html';
+        }, 0);
+    </script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+</html>
