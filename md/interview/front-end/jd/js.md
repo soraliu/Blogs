@@ -12,3 +12,21 @@
 
 * 页面渲染动画(jQuery)
     > 浏览器中GUI渲染线程与JavaScript引擎是互斥的，所以当JavaScript执行时，浏览器就不会做任何的页面渲染。[`code`](code/js/setTimeoutAnime.html)
+
+## 算法
+### 交换二叉树的左右节点（包括所有子节点的左右节点）[`code`](code/js/argorithmTreeSwitch.html)
+```javascript
+switch() {
+    if(null != this.left || null != this.right){
+        let temp = this.right;
+        this.right = this.left;
+        this.left = temp;
+    }
+    if (null != this.left) {
+        this.left.switch();
+    }
+    if (null != this.right) {
+        this.right.switch();
+    }
+}
+```

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algorithm switch tree child node</title>
+    <script>
+        class Tree {
+            constructor(left=null, right=null){
+                this.v = id++;
+                this.left = left;
+                this.right = right;
+            }
+
+            switch() {
+                if(null != this.left || null != this.right){
+                    let temp = this.right;
+                    this.right = this.left;
+                    this.left = temp;
+                }
+                if (null != this.left) {
+                    this.left.switch();
+                }
+                if (null != this.right) {
+                    this.right.switch();
+                }
+            }
+        }
+
+        var id = 0;
+
+        var A = new Tree();
+        var B = new Tree();
+        var C = new Tree(A, B);
+
+        var D = new Tree();
+        var E = new Tree(D);
+
+        var F = new Tree(C, E);
+        F.switch();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
