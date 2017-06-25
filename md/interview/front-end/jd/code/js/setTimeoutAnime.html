@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setTImeout Bubble</title>
+    <style>
+        #app, #appNoAnime {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        #appNoAnime {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        var isExpand = true;
+        var delay = 0;
+        var maxWitdh = 200;
+        var minWidth = 100;
+        var step = 1;
+        function anime(width) {
+            document.getElementById('app').style.width = width + 'px';
+            width -= step;
+            width >= minWidth && setTimeout(function() {
+                anime(width);
+            }, delay);
+        }
+
+        function animeE(width) {
+            document.getElementById('app').style.width = width + 'px';
+            width += step;
+            width <= maxWitdh && setTimeout(function() {
+                animeE(width);
+            }, delay);
+        }
+
+        document.getElementById('app').onclick = function(e) {
+            if (isExpand) {
+                anime(maxWitdh);
+                isExpand = false;
+            } else {
+                animeE(minWidth);
+                isExpand = true;
+            }
+        };
+    </script>
+
+    <div id="appNoAnime"></div>
+    <script>
+        var noAnimeIsExpand = true;
+        document.getElementById('appNoAnime').onclick = function(e) {
+            if (noAnimeIsExpand) {
+                for (var i = maxWitdh; i >= minWidth; i -= step) {
+                    e.target.style.width = i + 'px';
+                }
+                noAnimeIsExpand = false;
+            } else {
+                for (var i = minWidth; i <= maxWitdh; i += step) {
+                    e.target.style.width = i + 'px';
+                }
+                noAnimeIsExpand = true;
+            }
+        };
+    </script>
+</body>
+</html>
