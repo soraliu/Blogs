@@ -13,20 +13,10 @@
 * 页面渲染动画(jQuery)
     > 浏览器中GUI渲染线程与JavaScript引擎是互斥的，所以当JavaScript执行时，浏览器就不会做任何的页面渲染。[`code`](code/js/setTimeoutAnime.html)
 
-## 算法
-### 交换二叉树的左右节点（包括所有子节点的左右节点）[`code`](code/js/algorithmTreeSwitch.html)
-```javascript
-switch() {
-    if(null != this.left || null != this.right){
-        let temp = this.right;
-        this.right = this.left;
-        this.left = temp;
-    }
-    if (null != this.left) {
-        this.left.switch();
-    }
-    if (null != this.right) {
-        this.right.switch();
-    }
-}
-```
+## 执行上下文
+一系列活动的执行上下文从逻辑上形成一个栈。栈底总是全局上下文，栈顶是当前（活动的）执行上下文。当在不同的执行上下文间切换（退出的而进入新的执行上下文）的时候，栈会被修改（通过压栈或者退栈的形式）。
+
+当javascript代码文件被浏览器载入后，默认最先进入的是一个全局的执行上下文。当在全局上下文中调用执行一个函数时，程序流就进入该被调用函数内，此时引擎就会为该函数创建一个新的执行上下文，并且将其压入到执行上下文堆栈的顶部。浏览器总是执行当前在堆栈顶部的上下文，一旦执行完毕，该上下文就会从堆栈顶部被弹出，然后，进入其下的上下文执行代码。这样，堆栈中的上下文就会被依次执行并且弹出堆栈，直到回到全局的上下文。
+
+## 作用域链
+js函数在初始化过后会生成一个包含所有块作用域变量的作用域对象，如果一个变量在自己的作用域中没有找到，那么它会寻找父级的，直到最顶层
