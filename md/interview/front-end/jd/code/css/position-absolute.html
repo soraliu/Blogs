@@ -22,12 +22,32 @@
             height: 100px;
             background-color: blue;
         }
+
+        .relative {
+            top: 50px;
+            left: 50px;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .static {
+            /*left 无效*/
+            left: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
     </style>
 </head>
 <body>
 <div class="outer">
     <div class="inner"></div>
 </div>
+<div class="static"></div>
+<div class="relative"></div>
+<div class="static"></div>
 
 </body>
 </html>
