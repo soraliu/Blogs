@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prototype</title>
+    <script>
+        function Func(){}
+
+        console.log(Func.prototype);
+        console.log((new Func()).__proto__);
+
+        new Func().__proto__.name = 'fn';
+
+        console.log(new (new Func().__proto__.constructor)());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
