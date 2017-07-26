@@ -9,8 +9,3 @@
 
 # 不显示隐藏文件
 `defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder`
-
-# 打开tab
-`cmd + 左键双击`
-
-`cmd + t`
